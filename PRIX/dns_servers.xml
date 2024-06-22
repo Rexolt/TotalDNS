@@ -1,0 +1,90 @@
+<dns_servers>
+    <dns>
+        <provider>Cloudflare</provider>
+        <address>1.1.1.1</address>
+    </dns>
+    <dns>
+        <provider>Cloudflare (Secondary)</provider>
+        <address>1.0.0.1</address>
+    </dns>
+    <dns>
+        <provider>Google</provider>
+        <address>8.8.8.8</address>
+    </dns>
+    <dns>
+        <provider>Google (Secondary)</provider>
+        <address>8.8.4.4</address>
+    </dns>
+    <dns>
+        <provider>AdGuard DNS</provider>
+        <address>94.140.14.14</address>
+    </dns>
+    <dns>
+        <provider>AdGuard DNS (Secondary)</provider>
+        <address>94.140.15.15</address>
+    </dns>
+    <dns>
+        <provider>CleanBrowsing</provider>
+        <address>185.228.168.9</address>
+    </dns>
+    <dns>
+        <provider>CleanBrowsing (Secondary)</provider>
+        <address>185.228.169.9</address>
+    </dns>
+    <dns>
+        <provider>Alternate DNS</provider>
+        <address>76.76.19.19</address>
+    </dns>
+    <dns>
+        <provider>Alternate DNS (Secondary)</provider>
+        <address>76.223.122.150</address>
+    </dns>
+    <dns>
+        <provider>Quad9</provider>
+        <address>9.9.9.9</address>
+    </dns>
+    <dns>
+        <provider>Quad9 (Secondary)</provider>
+        <address>149.112.112.112</address>
+    </dns>
+    <dns>
+        <provider>SmartViper</provider>
+        <address>208.76.50.50</address>
+    </dns>
+    <dns>
+        <provider>SmartViper (Secondary)</provider>
+        <address>208.76.51.51</address>
+    </dns>
+    <dns>
+        <provider>SafeSurfer</provider>
+        <address>104.197.28.121</address>
+    </dns>
+    <dns>
+        <provider>SafeSurfer (Secondary)</provider>
+        <address>104.155.237.225</address>
+    </dns>
+    <dns>
+        <provider>SafeServe</provider>
+        <address>198.54.117.10</address>
+    </dns>
+    <dns>
+        <provider>SafeServe (Secondary)</provider>
+        <address>198.54.117.11</address>
+    </dns>
+    <dns>
+        <provider>UncensoredDNS</provider>
+        <address>91.239.100.100</address>
+    </dns>
+    <dns>
+        <provider>UncensoredDNS (Secondary)</provider>
+        <address>89.233.43.71</address>
+    </dns>
+    <dns>
+        <provider>Yandex DNS</provider>
+        <address>77.88.8.88</address>
+    </dns>
+    <dns>
+        <provider>Yandex DNS (Secondary)</provider>
+        <address>77.88.8.2</address>
+    </dns>
+</dns_servers>
