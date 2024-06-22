@@ -1,4 +1,4 @@
-# TotalDNS Alkalmazás
+# TotalDNS DNS Kliens
 
 ## Üdvözölünk a TotalDNS-ben!
 
