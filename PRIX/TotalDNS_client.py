@@ -8,7 +8,7 @@ class DNSApp(QMainWindow):
     def __init__(self):
         super().__init__()
 
-        self.setWindowTitle("DNS Alkalmazás")
+        self.setWindowTitle("TotalDNS Alkalmazás")
         self.setGeometry(100, 100, 600, 400)
         
         self.central_widget = QWidget()
@@ -45,7 +45,7 @@ class DNSApp(QMainWindow):
 
         self.load_dns()
 
-        self.apply_dark_mode()
+        self.apply_custom_style()
 
     def load_dns(self):
         self.dns_list.clear()
@@ -99,7 +99,7 @@ class DNSApp(QMainWindow):
             self.dns_list.addItem(item)
             self.dns_input.clear()
             self.dns_provider_input.clear()
-            self.save_dns_to_xml(self.get_dns_list())  # Mentjük az új DNS beállításokat
+            self.save_dns_to_xml(self.get_dns_list()) 
 
     def save_dns_to_xml(self, dns_servers):
         root = ET.Element("dns_servers")
@@ -123,28 +123,45 @@ class DNSApp(QMainWindow):
         except FileNotFoundError:
             return None
 
-    def apply_dark_mode(self):
-        dark_stylesheet = """
+    def apply_custom_style(self):
+        custom_stylesheet = """
         QMainWindow {
-            background-color: #2E2E2E;
+            background-color: #1E1E1E;
         }
-        QLabel, QPushButton, QLineEdit, QListWidget, QCheckBox {
+        QLabel {
             color: #FFFFFF;
-            background-color: #2E2E2E;
+            font-size: 14px;
         }
         QPushButton {
-            background-color: #444444;
-            border: 1px solid #555555;
-            padding: 5px;
+            background-color: #007BFF;
+            color: white;
+            font-size: 14px;
+            border-radius: 5px;
+            padding: 10px;
         }
         QPushButton:hover {
-            background-color: #555555;
+            background-color: #0056b3;
         }
-        QLineEdit, QListWidget, QCheckBox {
+        QLineEdit {
+            background-color: #2E2E2E;
+            color: #FFFFFF;
             border: 1px solid #555555;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        QListWidget {
+            background-color: #2E2E2E;
+            color: #FFFFFF;
+            border: 1px solid #555555;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        QCheckBox {
+            color: #FFFFFF;
+            font-size: 14px;
         }
         """
-        self.setStyleSheet(dark_stylesheet)
+        self.setStyleSheet(custom_stylesheet)
 
     def get_active_interface(self):
         try:
@@ -165,8 +182,8 @@ class DNSApp(QMainWindow):
                 self.status_label.setText("Nem található aktív interfész")
                 self.status_label.setStyleSheet("color: red;")
                 return
-            subprocess.check_call(f"powershell -Command \"Start-Process cmd -ArgumentList '/c netsh interface ip set dns name=\"{interface}\" source=\"static\" address=\"{dns}\"' -Verb runAs\"", shell=True)
-            subprocess.check_call(f"powershell -Command \"Start-Process cmd -ArgumentList '/c netsh interface ip add dns name=\"{interface}\" addr=\"{dns}\" index=2' -Verb runAs\"", shell=True)
+            subprocess.check_call(f"powershell -Command \"Start-Process cmd -ArgumentList '/c netsh interface ip set dns name=\\\"{interface}\\\" source=\\\"static\\\" address=\\\"{dns}\\\"' -Verb runAs\"", shell=True)
+            subprocess.check_call(f"powershell -Command \"Start-Process cmd -ArgumentList '/c netsh interface ip add dns name=\\\"{interface}\\\" addr=\\\"{dns}\\\" index=2' -Verb runAs\"", shell=True)
             self.status_label.setText(f"DNS beállítva: {dns}")
             self.status_label.setStyleSheet("color: green;")
             print(f"DNS beállítva: {dns}")
@@ -182,7 +199,7 @@ class DNSApp(QMainWindow):
                 self.status_label.setText("Nem található aktív interfész")
                 self.status_label.setStyleSheet("color: red;")
                 return
-            subprocess.check_call(f"powershell -Command \"Start-Process cmd -ArgumentList '/c netsh interface ip set dns name=\"{interface}\" source=dhcp' -Verb runAs\"", shell=True)
+            subprocess.check_call(f"powershell -Command \"Start-Process cmd -ArgumentList '/c netsh interface ip set dns name=\\\"{interface}\\\" source=dhcp' -Verb runAs\"", shell=True)
             self.status_label.setText("DNS visszaállítva automatikusra")
             self.status_label.setStyleSheet("color: green;")
             print("DNS visszaállítva automatikusra")
