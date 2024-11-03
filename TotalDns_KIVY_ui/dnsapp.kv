@@ -1,0 +1,53 @@
+<DNSAppLayout>:
+    orientation: "vertical"
+    dns_list: dns_list
+    dns_input: dns_input
+    dns_provider_input: dns_provider_input
+    status_label: status_label
+
+    Label:
+        text: "TotalDNS Alkalmazás"
+        font_size: 24
+        size_hint_y: None
+        height: 50
+
+    ListView:
+        id: dns_list
+        size_hint_y: None
+        height: 300
+        adapter:
+            ListAdapter(data=[], cls=ListItemButton)
+
+    BoxLayout:
+        size_hint_y: None
+        height: 40
+
+        TextInput:
+            id: dns_input
+            hint_text: "DNS cím (pl. 8.8.8.8)"
+
+        TextInput:
+            id: dns_provider_input
+            hint_text: "Szolgáltató neve (pl. Google)"
+
+        Button:
+            text: "Hozzáadás"
+            on_press: root.add_dns()
+
+    BoxLayout:
+        size_hint_y: None
+        height: 40
+
+        Button:
+            text: "Csatlakozás"
+            on_press: root.connect_dns()
+
+        Button:
+            text: "Szétkapcsolás"
+            on_press: root.disconnect_dns()
+
+    Label:
+        id: status_label
+        text: "Nincs csatlakoztatva"
+        size_hint_y: None
+        height: 30
