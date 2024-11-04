@@ -1,0 +1,15 @@
+<DNSRecycleView>:
+    viewclass: 'DNSItem'
+    RecycleBoxLayout:
+        orientation: 'vertical'
+        default_size: None, 50
+        default_size_hint: 1, None
+        size_hint_y: None
+        height: self.minimum_height
+
+<DNSItem>:
+    Label:
+        text: root.text
+        size_hint_x: 0.8
+        halign: 'left'
+        valign: 'middle'
