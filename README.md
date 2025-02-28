@@ -41,4 +41,4 @@ A DNS (Domain Name System) szerverek felelősek a weboldalak domain neveinek IP 
 
 ## Használat
 
-Csak válaszd ki a kívánt DNS szolgáltatót a listából, majd kattints a "Kapcsolódás" gombra a beállítások aktiválásához. A TotalDNS gyorsan és hatékonyan kezeli a DNS szervereket, így te csak élvezheted a gyorsabb internetezést!
+### Csak válaszd ki a kívánt DNS szolgáltatót a listából, majd kattints a "Kapcsolódás" gombra a beállítások aktiválásához. A TotalDNS gyorsan és hatékonyan kezeli a DNS szervereket, így te csak élvezheted a gyorsabb internetezést!
